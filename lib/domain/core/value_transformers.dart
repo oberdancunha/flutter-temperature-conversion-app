@@ -41,7 +41,7 @@ Either<void, double> convertTemperature({
 double _convertCelsiusToFahrenheit(double degreesInCelsius) {
   final degreesInFahrenheit = (degreesInCelsius * 1.8) + 32;
 
-  return degreesInFahrenheit;
+  return double.parse(degreesInFahrenheit.toStringAsFixed(2));
 }
 
 double _convertCelsiusToKelvin(double degreesInCelsius) {
