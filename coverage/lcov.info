@@ -8,12 +8,6 @@ DA:15,3
 LF:6
 LH:6
 end_of_record
-SF:lib/domain/core/temperature_scale.dart
-DA:1,0
-DA:9,3
-LF:2
-LH:1
-end_of_record
 SF:lib/domain/temperature/temperature.dart
 DA:12,1
 DA:17,1
@@ -64,6 +58,7 @@ DA:35,2
 DA:36,2
 DA:41,3
 DA:42,6
+DA:44,6
 DA:47,2
 DA:48,2
 DA:53,2
@@ -76,6 +71,6 @@ DA:65,2
 DA:66,2
 DA:71,2
 DA:72,8
-LF:36
-LH:36
+LF:37
+LH:37
 end_of_record
