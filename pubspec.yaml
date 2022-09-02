@@ -84,8 +84,6 @@ flutter:
     - family: JosefinSans
       fonts:
         - asset: assets/fonts/JosefinSans/JosefinSans-Regular.ttf
-        - asset: assets/fonts/JosefinSans/JosefinSans-Semibold.ttf
-          weight: 500
   #   - family: Schyler
   #     fonts:
   #       - asset: fonts/Schyler-Regular.ttf
