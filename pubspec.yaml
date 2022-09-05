@@ -51,6 +51,7 @@ dev_dependencies:
   dart_code_metrics: ^4.17.1
   value_listenable_test: ^0.0.1
   flutter_launcher_icons: ^0.10.0
+  flutter_native_splash: ^2.2.8
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -103,3 +104,6 @@ flutter_icons:
   android: true
   image_path_ios: "assets/icons/ios_launcher.png"
   ios: true
+
+flutter_native_splash:
+  background_image: "assets/images/splash/splash.png"
