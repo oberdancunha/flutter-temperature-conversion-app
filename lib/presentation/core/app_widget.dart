@@ -8,7 +8,7 @@ class AppWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => MaterialApp(
-        title: 'Temperature conversion app',
+        title: 'TConversion',
         debugShowCheckedModeBanner: false,
         theme: themeData,
         home: const HomePage(),
