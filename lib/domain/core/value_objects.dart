@@ -17,4 +17,7 @@ abstract class ValueObjects {
 
     return other.value == value;
   }
+
+  @override
+  int get hashCode => value.hashCode;
 }

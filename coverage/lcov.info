@@ -30,7 +30,9 @@ SF:lib/domain/core/value_objects.dart
 DA:10,8
 DA:12,1
 DA:18,3
-LF:3
+DA:21,0
+DA:22,0
+LF:5
 LH:3
 end_of_record
 SF:lib/domain/core/value_transformers.dart
