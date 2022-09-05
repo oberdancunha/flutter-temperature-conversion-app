@@ -2,6 +2,12 @@ import 'package:fpdart/fpdart.dart';
 
 import 'temperature_scale.dart';
 
+const fahrenheitWaterFreezes = 32;
+const fahrenheitScale = 1.8;
+const kelvinAbsoluteZero = 273.15;
+const kelvinZeroToFahrenheit = 459.67;
+const kelvinToFahrenheitScale = 5 / 9;
+
 Either<void, double> convertTemperature({
   required TemperatureScale from,
   required TemperatureScale to,
@@ -39,37 +45,38 @@ Either<void, double> convertTemperature({
 }
 
 double _convertCelsiusToFahrenheit(double degreesInCelsius) {
-  final degreesInFahrenheit = (degreesInCelsius * 1.8) + 32;
+  final degreesInFahrenheit = (degreesInCelsius * fahrenheitScale) + fahrenheitWaterFreezes;
 
   return double.parse(degreesInFahrenheit.toStringAsFixed(2));
 }
 
 double _convertCelsiusToKelvin(double degreesInCelsius) {
-  final kelvin = degreesInCelsius + 273.15;
+  final kelvin = degreesInCelsius + kelvinAbsoluteZero;
 
   return kelvin;
 }
 
 double _convertFahrenheitToCelsius(double degreesInFahrenheit) {
-  final degreesInCelsius = (degreesInFahrenheit - 32) / 1.8;
+  final degreesInCelsius = (degreesInFahrenheit - fahrenheitWaterFreezes) / fahrenheitScale;
 
   return degreesInCelsius.roundToDouble();
 }
 
 double _convertFahrenheitToKelvin(double degreesInFahrenheit) {
-  final kelvin = (degreesInFahrenheit + 459.67) * (5 / 9);
+  final kelvin = (degreesInFahrenheit + kelvinZeroToFahrenheit) * kelvinToFahrenheitScale;
 
   return double.parse(kelvin.toStringAsFixed(2));
 }
 
 double _convertKelvinToCelsius(double kelvin) {
-  final degreesInCelsius = kelvin - 273.15;
+  final degreesInCelsius = kelvin - kelvinAbsoluteZero;
 
   return degreesInCelsius;
 }
 
 double _convertKelvinToFahrenheit(double kelvin) {
-  final degreesInFahrenheit = ((kelvin - 273.15) * 9 / 5) + 32;
+  final degreesInFahrenheit =
+      ((kelvin - kelvinAbsoluteZero) * fahrenheitScale) + fahrenheitWaterFreezes;
 
   return degreesInFahrenheit;
 }
