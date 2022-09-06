@@ -53,13 +53,13 @@ double _convertCelsiusToFahrenheit(double degreesInCelsius) {
 double _convertCelsiusToKelvin(double degreesInCelsius) {
   final kelvin = degreesInCelsius + kelvinAbsoluteZero;
 
-  return kelvin;
+  return double.parse(kelvin.toStringAsFixed(2));
 }
 
 double _convertFahrenheitToCelsius(double degreesInFahrenheit) {
   final degreesInCelsius = (degreesInFahrenheit - fahrenheitWaterFreezes) / fahrenheitScale;
 
-  return degreesInCelsius.roundToDouble();
+  return double.parse(degreesInCelsius.toStringAsFixed(2));
 }
 
 double _convertFahrenheitToKelvin(double degreesInFahrenheit) {
@@ -71,12 +71,12 @@ double _convertFahrenheitToKelvin(double degreesInFahrenheit) {
 double _convertKelvinToCelsius(double kelvin) {
   final degreesInCelsius = kelvin - kelvinAbsoluteZero;
 
-  return degreesInCelsius;
+  return double.parse(degreesInCelsius.toStringAsFixed(2));
 }
 
 double _convertKelvinToFahrenheit(double kelvin) {
   final degreesInFahrenheit =
       ((kelvin - kelvinAbsoluteZero) * fahrenheitScale) + fahrenheitWaterFreezes;
 
-  return degreesInFahrenheit;
+  return double.parse(degreesInFahrenheit.toStringAsFixed(2));
 }
