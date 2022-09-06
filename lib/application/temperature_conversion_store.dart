@@ -8,11 +8,13 @@ class TemperatureConversionStore extends ValueNotifier<Temperature> {
   TemperatureConversionStore() : super(Temperature.initial());
 
   void changeScale({required TemperatureScale to}) {
+    final temperature = value;
+
     value = Temperature(
       value: TemperatureValueObjects(
-        from: value.scale,
+        from: temperature.scale,
         to: to,
-        value: value.value.getOrError(),
+        value: temperature.value.getOrError(),
       ),
       scale: to,
     );

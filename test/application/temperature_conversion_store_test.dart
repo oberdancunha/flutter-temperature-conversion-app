@@ -7,15 +7,17 @@ import 'package:value_listenable_test/value_listenable_test.dart';
 
 void main() {
   late TemperatureConversionStore temperatureConversionStore;
+  late Temperature temperature;
 
   setUp(() {
     temperatureConversionStore = TemperatureConversionStore();
+    temperature = temperatureConversionStore.value;
   });
 
   test('Should verify initial state', () {
-    expect(temperatureConversionStore.value.scale, equals(TemperatureScale.celsius));
-    expect(temperatureConversionStore.value.value.getOrError(), greaterThanOrEqualTo(0));
-    expect(temperatureConversionStore.value.value.getOrError(), lessThanOrEqualTo(57));
+    expect(temperature.scale, equals(TemperatureScale.celsius));
+    expect(temperature.value.getOrError(), greaterThanOrEqualTo(0));
+    expect(temperature.value.getOrError(), lessThanOrEqualTo(57));
   });
 
   valueListenableTest<TemperatureConversionStore>(
@@ -27,7 +29,7 @@ void main() {
         value: TemperatureValueObjects(
           from: TemperatureScale.celsius,
           to: TemperatureScale.fahrenheit,
-          value: temperatureConversionStore.value.value.getOrError(),
+          value: temperature.value.getOrError(),
         ),
         scale: TemperatureScale.fahrenheit,
       ),
