@@ -16,8 +16,8 @@ void main() {
 
   test('Should verify initial state', () {
     expect(temperature.scale, equals(TemperatureScale.celsius));
-    expect(temperature.value.getOrError(), greaterThanOrEqualTo(0));
     expect(temperature.value.getOrError(), lessThanOrEqualTo(57));
+    expect(temperature.value.getOrError(), greaterThanOrEqualTo(-89));
   });
 
   valueListenableTest<TemperatureConversionStore>(

@@ -21,7 +21,9 @@ class Temperature extends Equatable {
         value: TemperatureValueObjects(
           from: TemperatureScale.celsius,
           to: TemperatureScale.celsius,
-          value: Random().nextInt(57).toDouble(),
+          value: Random().nextBool()
+              ? Random().nextInt(89).toDouble() * -1
+              : Random().nextInt(57).toDouble(),
         ),
         scale: TemperatureScale.celsius,
       );
