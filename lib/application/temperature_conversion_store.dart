@@ -11,6 +11,7 @@ class TemperatureConversionStore extends ValueNotifier<Temperature> {
     final temperature = value;
 
     value = Temperature(
+      id: TemperatureIdValueObjects(),
       value: TemperatureValueObjects(
         from: temperature.scale,
         to: to,

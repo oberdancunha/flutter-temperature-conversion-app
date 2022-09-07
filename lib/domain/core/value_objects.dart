@@ -4,10 +4,10 @@ import 'package:fpdart/fpdart.dart';
 import '../temperature/temperature_value_objects.dart';
 
 @immutable
-abstract class ValueObjects {
-  Either<void, double> get value;
+abstract class ValueObjects<T> {
+  Either<void, T> get value;
 
-  double getOrError() => value.getRight().getOrElse(() => throw Error);
+  T getOrError() => value.getRight().getOrElse(() => throw Error);
 
   @override
   bool operator ==(covariant TemperatureValueObjects other) {

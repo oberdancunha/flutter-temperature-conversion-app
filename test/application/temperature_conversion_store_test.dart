@@ -26,6 +26,7 @@ void main() {
     act: (store) => store.changeScale(to: TemperatureScale.fahrenheit),
     expect: () => [
       Temperature(
+        id: TemperatureIdValueObjects(),
         value: TemperatureValueObjects(
           from: TemperatureScale.celsius,
           to: TemperatureScale.fahrenheit,

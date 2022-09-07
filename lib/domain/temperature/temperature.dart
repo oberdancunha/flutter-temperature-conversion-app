@@ -6,10 +6,12 @@ import '../core/temperature_scale.dart';
 import 'temperature_value_objects.dart';
 
 class Temperature extends Equatable {
+  final TemperatureIdValueObjects id;
   final TemperatureValueObjects value;
   final TemperatureScale scale;
 
   const Temperature({
+    required this.id,
     required this.value,
     required this.scale,
   });
@@ -18,6 +20,7 @@ class Temperature extends Equatable {
   List<Object> get props => [value, scale];
 
   factory Temperature.initial() => Temperature(
+        id: TemperatureIdValueObjects(),
         value: TemperatureValueObjects(
           from: TemperatureScale.celsius,
           to: TemperatureScale.celsius,
